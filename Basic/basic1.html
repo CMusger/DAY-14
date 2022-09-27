@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+    <title>Basic Exercise 1</title>
+  </head>
+  <body>
+    <h1 class="p-3 bg-dark text-white m-0">Basic Exercise 1</h1>
+    <!-- FORM -->
+
+    <form class="p-3 bg-dark text-white">
+        <!-- FIRSTNAME -->
+        <div class="mb-3">
+        <label for="firstname" class="form-label">Firstname</label>
+        <input
+          type="text"
+          class="form-control"
+          id="firstname"
+        />
+      </div>
+      <!-- LASTNAME -->
+      <div class="mb-3">
+        <label for="lastname" class="form-label">Lastname</label>
+        <input
+          type="text"
+          class="form-control"
+          id="lastname"
+        />
+      </div>
+      <!-- AGE -->
+      <div class="mb-3">
+        <label for="age" class="form-label">Age</label>
+        <input
+          type="text"
+          class="form-control"
+          id="age"
+        />
+      </div>
+      <!-- BUTTON -->
+      <a class="btn btn-primary" id="button">Submit</a>
+      
+      <!-- OUTPUT RESULT -->
+    </form>
+    <div class="container-fluid bg-dark text-white text-center" id="result">
+
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script defer>
+        let button = document.getElementById("button");
+        const resultOut = () => {
+            let firstname = document.getElementById("firstname").value;
+            let lastname = document.getElementById("lastname").value;
+            let age = document.getElementById("age").value;
+            let result = document.getElementById("result");
+
+            // result.innerHTML = `<p class="h2 p-2">Firstname: ${firstname} - Lastname: ${lastname} - Age: ${age}</p>`;
+
+            if(firstname.length > 5){
+                result.innerHTML = `<p class="h2 p-2" style="color:green">Firstname: ${firstname} - Lastname: ${lastname} - Age: ${age}</p>`;
+            } else {
+                result.innerHTML = `<p class="h2 p-2" style="color:red">Firstname: ${firstname} - Lastname: ${lastname} - Age: ${age}</p>`;
+            }
+        }
+        button.addEventListener("click", resultOut);
+
+    </script>
+  </body>
+</html>
